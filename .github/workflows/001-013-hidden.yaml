@@ -1,0 +1,23 @@
+name: 001-013-hidden
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "**/Tasks/001-013-hidden/**"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "**/Tasks/001-013-hidden/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # Execute the step demo to verify that all is working
+    steps:
+      # Check out the code
+      - uses: actions/checkout@v4
+
+      - name: Test Lab
+        working-directory: Tasks/001-013-hidden
+        run: bash ./_demo.sh

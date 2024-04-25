@@ -1,0 +1,11 @@
+---
+services:
+  ubuntu-cyber-course:
+    build:  
+      context: .
+    container_name: ubuntu-cyber-course
+    image:  nirgeier/ubuntu-cyber-course
+    command: sleep inf
+    volumes:
+      - ${PWD}/../:/src
+    

@@ -1,0 +1,23 @@
+name: <TASK_ID>
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "**/<TASK_PATH>/**"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "**/<TASK_PATH>/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # Execute the step demo to verify that all is working
+    steps:
+      # Check out the code
+      - uses: actions/checkout@v4
+
+      - name: Test Lab
+        working-directory: <TASK_PATH>
+        run: bash ./_demo.sh

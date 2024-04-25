@@ -1,0 +1,23 @@
+name: 001-004-hidden-files
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "**/Tasks/001-004-hidden-files/**"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "**/Tasks/001-004-hidden-files/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # Execute the step demo to verify that all is working
+    steps:
+      # Check out the code
+      - uses: actions/checkout@v4
+
+      - name: Test Lab
+        working-directory: Tasks/001-004-hidden-files
+        run: bash ./_demo.sh

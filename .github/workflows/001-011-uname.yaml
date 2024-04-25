@@ -1,0 +1,23 @@
+name: 001-011-uname
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "**/Tasks/001-011-uname/**"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "**/Tasks/001-011-uname/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # Execute the step demo to verify that all is working
+    steps:
+      # Check out the code
+      - uses: actions/checkout@v4
+
+      - name: Test Lab
+        working-directory: Tasks/001-011-uname
+        run: bash ./_demo.sh
